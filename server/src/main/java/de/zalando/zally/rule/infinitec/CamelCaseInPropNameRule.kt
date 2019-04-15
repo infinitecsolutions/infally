@@ -1,4 +1,4 @@
-package de.zalando.zally.rule.zalando
+package de.zalando.zally.rule.infinitec
 
 import com.typesafe.config.Config
 import de.zalando.zally.rule.CaseChecker
@@ -9,13 +9,13 @@ import de.zalando.zally.rule.api.Severity
 import de.zalando.zally.rule.api.Violation
 
 @Rule(
-    ruleSet = ZalandoRuleSet::class,
+    ruleSet = InfinitecRuleSet::class,
     id = "118",
     severity = Severity.MUST,
-    title = "Property Names Must be ASCII snake_case"
+    title = "Property Names Must be CamelCase"
 )
-class SnakeCaseInPropNameRule(config: Config) {
-    private val description = "Property name has to be snake_case"
+class CamelCaseInPropNameRule(config: Config) {
+    private val description = "Property name has to be CamelCase"
 
     private val checker = CaseChecker.load(config)
 

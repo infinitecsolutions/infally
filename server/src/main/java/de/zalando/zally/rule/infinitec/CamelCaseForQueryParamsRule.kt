@@ -1,4 +1,4 @@
-package de.zalando.zally.rule.zalando
+package de.zalando.zally.rule.infinitec
 
 import com.typesafe.config.Config
 import de.zalando.zally.rule.CaseChecker
@@ -9,17 +9,17 @@ import de.zalando.zally.rule.api.Severity
 import de.zalando.zally.rule.api.Violation
 
 /**
- * Lint for snake case for query params
+ * Lint for camel case for query params
  */
 @Rule(
-    ruleSet = ZalandoRuleSet::class,
+    ruleSet = InfinitecRuleSet::class,
     id = "130",
     severity = Severity.MUST,
-    title = "Use snake_case (never camelCase) for Query Parameters"
+    title = "Use CamelCase (never snake_case) for Query Parameters"
 )
-class SnakeCaseForQueryParamsRule(config: Config) {
+class CamelCaseForQueryParamsRule(config: Config) {
 
-    val description = "Query parameter has to be snake_case"
+    val description = "Query parameter has to be CamelCase"
 
     private val checker = CaseChecker.load(config)
 
