@@ -31,10 +31,22 @@ export function App(props) {
             />
             API Linter
           </Link>{' '}
-          - an UI instance of the{' '}
-          <Link to="https://github.com/zalando/zally" target="_blank">
-            'Zally' open source project
-          </Link>
+          - check if your&nbsp;
+          <a
+            href="https://github.com/OAI/OpenAPI-Specification"
+            target="_blank"
+            className="dc-link"
+          >
+            OpenAPI v3 Schema
+          </a>{' '}
+          conforms to&nbsp;
+          <a
+            href="https://internal-docs.nova.infinitec.solutions/api-guidelines/"
+            target="_blank"
+            className="dc-link"
+          >
+            Infinitec's REST API Guidelines
+          </a>
         </h1>
         {OAUTH_ENABLED === true ? (
           <UserInfo
