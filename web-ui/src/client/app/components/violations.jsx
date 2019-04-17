@@ -63,6 +63,16 @@ export function Violation(props) {
       >
         <ViolationPaths paths={paths} />
       </If>
+
+      <If
+        test={() => !!violation.start_line || !!violation.end_line}
+        dataTestId="if-violation-lines"
+      >
+        <ViolationLines
+          startLine={violation.start_line}
+          endLine={violation.end_line}
+        />
+      </If>
     </li>
   );
 }
@@ -97,6 +107,14 @@ export function ViolationPaths(props) {
         })}
       </ul>
     </span>
+  );
+}
+
+export function ViolationLines(props) {
+  return (
+    <p>
+      Lines: {props.startLine || '?'}&ndash;{props.endLine || '?'}
+    </p>
   );
 }
 
